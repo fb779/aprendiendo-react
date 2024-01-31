@@ -1,13 +1,14 @@
 const ENDPOINT_FIRST_API = `https://catfact.ninja/fact`;
 const ENDPOINT_SECOND_API = `https://cataas.com/cat/says/`;
 
+// async - await
 // export const getFact = async () => {
 //   const resp = await fetch(ENDPOINT_FIRST_API);
 //   const data = await resp.json();
 //   return data.fact;
 // };
 
-// Clasic way
+// Promise
 export const getFact = () => {
   return fetch(ENDPOINT_FIRST_API)
     .then((resp) => resp.json())

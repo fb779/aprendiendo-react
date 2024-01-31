@@ -1,25 +1,14 @@
-import { useState, useEffect } from "react";
+import { useCatFact } from "./hooks/useCatFact";
+import { useCatImage } from "./hooks/useCatImage";
 import "./App.css";
-import { getFact, getImageUrl } from "./services/Service";
 
 export function App() {
-  const [fact, setFact] = useState("");
-  const [catUrl, setCatUrl] = useState("");
+  const { fact, refreshFact } = useCatFact();
 
-  // get the fact from the first endpoint
-  useEffect(() => {
-    getFact().then((newFact) => setFact(newFact));
-  }, []);
-
-  // get the first three words from the sentence
-  useEffect(() => {
-    if (!fact) return;
-    const firstThreeWords = fact.split(" ", 3).join(" ");
-    getImageUrl(firstThreeWords).then((newCatUrl) => setCatUrl(newCatUrl));
-  }, [fact]);
+  const { catUrl } = useCatImage({ fact });
 
   const hadleClick = () => {
-    getFact().then(setFact);
+    refreshFact();
   };
 
   return (
