@@ -1,35 +1,33 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-
-const ENDPOINT_FIRST_API = `https://catfact.ninja/fact`;
-const ENDPOINT_SECOND_API = `https://cataas.com/cat/says/`;
+import { getFact, getImageUrl } from "./services/Service";
 
 export function App() {
-  const [fact, setSentence] = useState("");
+  const [fact, setFact] = useState("");
   const [catUrl, setCatUrl] = useState("");
 
   // get the fact from the first endpoint
   useEffect(() => {
-    fetch(ENDPOINT_FIRST_API)
-      .then((res) => res.json())
-      .then((data) => setSentence(data.fact));
+    getFact().then((newFact) => setFact(newFact));
   }, []);
 
   // get the first three words from the sentence
   useEffect(() => {
     if (!fact) return;
     const firstThreeWords = fact.split(" ", 3).join(" ");
-
-    fetch(`${ENDPOINT_SECOND_API}${firstThreeWords}`).then((resp) => {
-      const { url } = resp;
-      setCatUrl(url);
-    });
+    getImageUrl(firstThreeWords).then((newCatUrl) => setCatUrl(newCatUrl));
   }, [fact]);
+
+  const hadleClick = () => {
+    getFact().then(setFact);
+  };
 
   return (
     <main>
       <h1>App de gatitos</h1>
-
+      <section>
+        <button onClick={hadleClick}>Refresh the cat</button>
+      </section>
       {fact && (
         <section>
           <p>{fact}</p>
