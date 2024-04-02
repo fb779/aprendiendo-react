@@ -1,11 +1,11 @@
-import { useCart } from '../hooks/useCart';
-import { useFilters } from '../hooks/useFilters';
+// import { useCart } from '../hooks/useCart';
+// import { useFilters } from '../hooks/useFilters';
 
 import './Footer.css';
 
 export function Footer() {
-  const { cart } = useCart();
-  const { filters } = useFilters();
+  // const { cart } = useCart();
+  // const { filters } = useFilters();
 
   return (
     // <footer className='footer'>

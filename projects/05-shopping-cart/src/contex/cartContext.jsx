@@ -29,7 +29,8 @@ export function Cartprovider({ children }) {
         removeToCart,
         removeFromCart,
         clearToCart,
-      }}>
+      }}
+    >
       {children}
     </CartContex.Provider>
   );

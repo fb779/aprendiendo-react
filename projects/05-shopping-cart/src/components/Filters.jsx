@@ -37,7 +37,8 @@ export function Filters() {
           onChange={handleChangeCategory}
           name='category'
           id={categoryFilterId}
-          value={filters.category}>
+          value={filters.category}
+        >
           <option value='all'>All</option>
           <option value='home-decoration'> home-decoration </option>
           <option value='laptops'> laptops </option>

@@ -1,6 +1,6 @@
-import { useCatFact } from "./hooks/useCatFact";
-import { useCatImage } from "./hooks/useCatImage";
-import "./App.css";
+import { useCatFact } from './hooks/useCatFact';
+import { useCatImage } from './hooks/useCatImage';
+import './App.css';
 
 export function App() {
   const { fact, refreshFact } = useCatFact();

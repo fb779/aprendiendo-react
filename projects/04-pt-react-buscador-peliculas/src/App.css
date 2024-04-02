@@ -23,7 +23,6 @@ main {
   justify-content: center;
 }
 
-
 .movies {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -39,11 +38,12 @@ main {
   text-align: center;
 }
 
-.movie h3, .movie p {
+.movie h3,
+.movie p {
   margin: 0;
 }
 
-.movie img{
+.movie img {
   margin: 1rem 0;
   border-radius: 1rem;
   width: 90%;

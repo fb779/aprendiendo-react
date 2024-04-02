@@ -1,9 +1,9 @@
-import { useCallback, useState } from "react";
-import { useMovies } from "./hooks/useMovies";
-import { useSearch } from "./hooks/useSearch";
-import { Movies } from "./components/movies";
-import debounceit from "just-debounce-it";
-import "./App.css";
+import { useCallback, useState } from 'react';
+import { useMovies } from './hooks/useMovies';
+import { useSearch } from './hooks/useSearch';
+import { Movies } from './components/movies';
+import debounceit from 'just-debounce-it';
+import './App.css';
 
 function App() {
   const [sort, setSort] = useState(false);
@@ -36,32 +36,32 @@ function App() {
   };
 
   return (
-    <div className="page">
+    <div className='page'>
       <header>
         <h1>buscador de peliculas</h1>
-        <form className="form" onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
           <input
             style={{
-              border: "1px solid transparent",
-              borderColor: error ? "red" : "transparent",
+              border: '1px solid transparent',
+              borderColor: error ? 'red' : 'transparent',
             }}
-            type="text"
-            name="search"
-            placeholder="Avengers, Matrix, SuperMan, MArio Bros, ...."
+            type='text'
+            name='search'
+            placeholder='Avengers, Matrix, SuperMan, MArio Bros, ....'
             value={search}
             onChange={handleChange}
           />
 
           <input
-            type="checkbox"
-            name="sorted"
+            type='checkbox'
+            name='sorted'
             onChange={handleSort}
             checked={sort}
           />
 
-          <button type="submit">Submit</button>
+          <button type='submit'>Submit</button>
         </form>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </header>
 
       <main>{loading ? <p>loading</p> : <Movies movies={movies} />}</main>

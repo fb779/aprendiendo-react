@@ -1,12 +1,12 @@
 export const TURNS = {
-  X: "x",
-  O: "o",
+  X: 'x',
+  O: 'o',
 };
 
 export const ENVIRONMENT = {
-  board: "board",
-  turn: "turn",
-  winner: "winner",
+  board: 'board',
+  turn: 'turn',
+  winner: 'winner',
 };
 
 export const COMBO_WINNER = [

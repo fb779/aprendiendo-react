@@ -31,7 +31,8 @@ export function Products({ products }) {
                       isproductInCart
                         ? removeFromCart(product)
                         : addToCart(product);
-                    }}>
+                    }}
+                  >
                     {isproductInCart ? (
                       <RemoveFromCartIcon />
                     ) : (

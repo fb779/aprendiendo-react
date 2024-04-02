@@ -1,10 +1,10 @@
-import { useCallback, useMemo, useRef, useState } from "react";
-import { searchinMovies } from "../services/movies";
+import { useCallback, useMemo, useRef, useState } from 'react';
+import { searchinMovies } from '../services/movies';
 
 export function useMovies({ search, sort }) {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [, setError] = useState(null);
   const previusSearch = useRef(search);
 
   const getMovies = useCallback(async ({ search }) => {

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { getFact } from "../services/Service";
+import { useEffect, useState } from 'react';
+import { getFact } from '../services/Service';
 
 export function useCatFact() {
-  const [fact, setFact] = useState("");
+  const [fact, setFact] = useState('');
 
   const refreshFact = () => {
     getFact().then((newFact) => setFact(newFact));

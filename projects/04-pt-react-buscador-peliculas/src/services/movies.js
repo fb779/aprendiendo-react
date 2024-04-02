@@ -1,8 +1,8 @@
-const API_KEY = "4287ad07";
-import { mappedMovies } from "../logic/mappedMovies.js";
+const API_KEY = '4287ad07';
+import { mappedMovies } from '../logic/mappedMovies.js';
 
 export async function searchinMovies({ search }) {
-  if (search == "") {
+  if (search == '') {
     return null;
   }
 
@@ -16,6 +16,6 @@ export async function searchinMovies({ search }) {
 
     return movies;
   } catch (e) {
-    throw new Error("Error searchin movies");
+    throw new Error('Error searchin movies');
   }
 }

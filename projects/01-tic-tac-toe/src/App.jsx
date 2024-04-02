@@ -1,11 +1,11 @@
-import { useState } from "react";
-import confetti from "canvas-confetti";
-import { Square } from "./componets/Square";
-import { WinnerModal } from "./componets/WinnerModal.jsx";
-import { TURNS, ENVIRONMENT } from "./constants.js";
-import "./App.css";
-import { checkEndGame, checkWinner } from "./logic/board.js";
-import { clearStorage, getStorage, saveStorage } from "./logic/storage.js";
+import { useState } from 'react';
+import confetti from 'canvas-confetti';
+import { Square } from './componets/Square';
+import { WinnerModal } from './componets/WinnerModal.jsx';
+import { TURNS, ENVIRONMENT } from './constants.js';
+import './App.css';
+import { checkEndGame, checkWinner } from './logic/board.js';
+import { clearStorage, getStorage, saveStorage } from './logic/storage.js';
 
 function App() {
   // const [board, setBoard] = useState(Array(9).fill(null));
@@ -60,10 +60,10 @@ function App() {
   };
 
   return (
-    <main className="board">
+    <main className='board'>
       <h1>tic-tac-toe</h1>
       <button onClick={resetGame}>Reset Game</button>
-      <section className="game">
+      <section className='game'>
         {board.map((square, index) => {
           return (
             <Square key={index} index={index} updateBoard={updateBoard}>
@@ -72,7 +72,7 @@ function App() {
           );
         })}
       </section>
-      <section className="turn">
+      <section className='turn'>
         <Square isSelected={turn === TURNS.X}> {TURNS.X} </Square>
         <Square isSelected={turn === TURNS.O}> {TURNS.O} </Square>
       </section>
