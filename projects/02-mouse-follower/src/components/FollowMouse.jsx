@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export function FolloweMouse() {
   const [enabled, setEnabled] = useState(false);
@@ -20,7 +20,7 @@ export function FolloweMouse() {
     };
 
     if (enabled) {
-      window.addEventListener('pointermove', handleMove);
+      window.addEventListener("pointermove", handleMove);
     }
 
     /**
@@ -31,26 +31,26 @@ export function FolloweMouse() {
     return () => {
       // cleanup
       setPosition({ x: 0, y: 0 });
-      window.removeEventListener('pointermove', handleMove);
+      window.removeEventListener("pointermove", handleMove);
     };
   }, [enabled]);
 
   useEffect(() => {
-    document.body.classList.toggle('no-cursor', enabled);
+    document.body.classList.toggle("no-cursor", enabled);
 
     return () => {
-      document.body.classList.remove('no-cursor');
+      document.body.classList.remove("no-cursor");
     };
   }, [enabled]);
   return (
     <>
       <div
         style={{
-          position: 'absolute',
-          backgroundColor: '#09f',
-          borderRadius: '50%',
+          position: "absolute",
+          backgroundColor: "#09f",
+          borderRadius: "50%",
           opacity: 0.8,
-          pointerEvents: 'none',
+          pointerEvents: "none",
           left: -20,
           top: -20,
           width: 40,
@@ -60,7 +60,7 @@ export function FolloweMouse() {
       />
       <h3>Proyecto 3</h3>
       <button onClick={() => setEnabled(!enabled)}>
-        {enabled ? 'Desactivar' : 'Activar'} seguir puntero
+        {enabled ? "Desactivar" : "Activar"} seguir puntero
       </button>
     </>
   );
