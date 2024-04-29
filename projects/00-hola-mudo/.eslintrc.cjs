@@ -10,13 +10,9 @@ module.exports = {
   ],
   overrides: [
     {
-      env: {
-        node: true,
-      },
+      env: { node: true },
       files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script',
-      },
+      parserOptions: { sourceType: 'script' },
     },
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],

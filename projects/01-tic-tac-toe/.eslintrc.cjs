@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
+  settings: { react: { version: 'detect' } },
   extends: [
     'standard',
     'plugin:react/recommended',
@@ -12,7 +13,7 @@ module.exports = {
   overrides: [
     {
       env: { node: true },
-      files: ['.eslintrc.{js,cjs}'],
+      files: ['.eslintrc.{js,jsx,cjs}'],
       parserOptions: { sourceType: 'script' },
     },
   ],
